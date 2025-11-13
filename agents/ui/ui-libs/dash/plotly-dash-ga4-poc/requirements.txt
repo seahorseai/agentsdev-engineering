@@ -1,5 +1,0 @@
-google-analytics-data
-pandas
-python-dotenv
-dash
-plotly
