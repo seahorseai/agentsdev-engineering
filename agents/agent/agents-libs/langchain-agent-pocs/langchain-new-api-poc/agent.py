@@ -9,12 +9,12 @@ def search_database(query: str, limit: int = 10) -> str:
     return f"Found {limit} results for '{query}'"
 
 agent = create_agent(
-    init_chat_model(
-    model="openai:gpt-4",  # or "openai:gpt-4o" for GPT-4o
-    temperature=0.1,
-    max_tokens=1000,
-    timeout=30,
-    openai_api_key=load_openai_api_key), 
+    model=init_chat_model(
+        model="openai:gpt-4",  # or "openai:gpt-4o" for GPT-4o
+        temperature=0.1,
+        max_tokens=1000,
+        timeout=30,
+        openai_api_key=load_openai_api_key), 
     tools=[search_database], 
     system_prompt="You are a helpful assistant. Be concise and accurate.")
 
